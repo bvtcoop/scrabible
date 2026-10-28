@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scrabible Support</title>
+<meta name="description" content="Help and contact for the Scrabible word game for iPhone and iPad.">
+<style>
+  :root { --bg: #fbf5e8; --card: #fffaf0; --text: #2b2118; --muted: #6b5a48; --ink: #1f3468; --rule: #e2d4b8; --button: #2a4fa0; --button-text: #ffffff; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #1d1914; --card: #26211a; --text: #efe6d6; --muted: #b8a88f; --ink: #9db4ef; --rule: #3a3227; --button: #3a63c4; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.6 Georgia, "Times New Roman", serif; }
+  main { max-width: 720px; margin: 0 auto; padding: 40px 16px 64px; }
+  h1 { font-size: 2rem; margin: 0 0 4px; color: var(--ink); letter-spacing: .02em; }
+  h2 { font-size: 1.25rem; margin: 2em 0 .5em; color: var(--ink); }
+  p { margin: .4em 0; }
+  a { color: var(--ink); }
+  .lead { color: var(--muted); }
+  form { background: var(--card); border: 1px solid var(--rule); border-radius: 14px; padding: 18px; }
+  label { display: block; font-weight: bold; margin: 14px 0 6px; }
+  label:first-child { margin-top: 0; }
+  .hint { font-weight: normal; color: var(--muted); font-size: .9rem; }
+  select, input, textarea { width: 100%; font: inherit; color: var(--text); background: var(--bg); border: 1px solid var(--rule);
+    border-radius: 10px; padding: 10px 12px; }
+  textarea { min-height: 140px; resize: vertical; }
+  button { margin-top: 16px; width: 100%; min-height: 48px; font: inherit; font-weight: bold; letter-spacing: .04em;
+    color: var(--button-text); background: var(--button); border: 0; border-radius: 12px; cursor: pointer; }
+  button:focus-visible, select:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
+  .note { color: var(--muted); font-size: .9rem; margin-top: 10px; }
+  details { border-bottom: 1px solid var(--rule); padding: 10px 0; }
+  summary { cursor: pointer; font-weight: bold; }
+  details p { margin-top: 8px; }
+  footer { margin-top: 3em; padding-top: 1em; border-top: 1px solid var(--rule); color: var(--muted); font-size: .9rem; }
+</style>
+</head>
+<body>
+<main>
+<h1>Scrabible Support</h1>
+<p class="lead">Questions, problems or ideas? Send us a message and we'll reply by email, usually within a few days.</p>
+
+<h2>Contact us</h2>
+<form id="support" novalidate>
+  <label for="topic">Topic</label>
+  <select id="topic" name="topic">
+    <option>Question about playing</option>
+    <option>Something isn't working</option>
+    <option>Gems or a purchase</option>
+    <option>Online games</option>
+    <option>A word is wrong or missing</option>
+    <option>Idea or feedback</option>
+    <option>Privacy</option>
+  </select>
+
+  <label for="device">Device <span class="hint">(optional, e.g. iPhone 15, iOS 26)</span></label>
+  <input id="device" name="device" autocomplete="off">
+
+  <label for="message">Message</label>
+  <textarea id="message" name="message" required></textarea>
+
+  <button type="submit">Write email</button>
+  <p class="note">This opens your email app with your message filled in, ready to send to
+  <a href="mailto:scrabible.app@gmail.com">scrabible.app@gmail.com</a>. Nothing is stored on this page.</p>
+</form>
+
+<h2>Common questions</h2>
+<details>
+  <summary>I don't feel any haptics</summary>
+  <p>In the iOS Settings app, turn on <strong>Sounds &amp; Haptics → System Haptics</strong> and
+  <strong>Accessibility → Touch → Vibration</strong>. If Vibration is off, iOS turns off all haptics in every app. Also check
+  that Haptics is on in Scrabible's Settings.</p>
+</details>
+<details>
+  <summary>I can't hear any sounds</summary>
+  <p>Scrabible's sounds follow your iPhone's silent switch, so turn silent mode off and raise the volume. You can also pick a
+  sound style (Chimes, Organ or Brass) in Scrabible's Settings.</p>
+</details>
+<details>
+  <summary>I bought Gems but didn't receive them</summary>
+  <p>Open Scrabible again while connected to the internet: purchases that didn't finish are completed when the app starts. If
+  the Gems still don't appear, send us a message with the date of the purchase. Refunds are handled by Apple at
+  <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
+</details>
+<details>
+  <summary>How do online games work?</summary>
+  <p>Online games use Apple's Game Center. Make sure you're signed in to Game Center in the iOS Settings app, then choose
+  Online games on the Home screen to invite a friend or play a random opponent. You have 7 days for each move.</p>
+</details>
+<details>
+  <summary>Will my progress move to a new iPhone?</summary>
+  <p>Yes. Your level, statistics and Gems are kept in your iCloud account, so they follow you when you sign in with the same
+  Apple Account.</p>
+</details>
+<details>
+  <summary>A word was refused, or shouldn't be allowed</summary>
+  <p>During a game, tap the <strong>•••</strong> button and choose <strong>Report a word</strong>, or use the form above. We review every report.</p>
+</details>
+<details>
+  <summary>What is Family mode?</summary>
+  <p>Family mode, in Scrabible's Settings, blocks the few biblical words that aren't family-friendly. It applies to new games.</p>
+</details>
+
+<footer><a href="../">Scrabible</a> · <a href="../privacy/">Privacy Policy</a> · Yuliya Nekrasova</footer>
+</main>
+<script>
+  document.getElementById('support').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var message = document.getElementById('message');
+    if (!message.value.trim()) { message.focus(); return; }
+    var topic = document.getElementById('topic').value;
+    var device = document.getElementById('device').value.trim();
+    var body = message.value.trim() + (device ? '\n\nDevice: ' + device : '');
+    window.location.href = 'mailto:scrabible.app@gmail.com?subject=' + encodeURIComponent('Scrabible: ' + topic) +
+      '&body=' + encodeURIComponent(body);
+  });
+</script>
+</body>
+</html>
